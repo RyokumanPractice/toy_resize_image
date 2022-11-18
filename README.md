@@ -23,4 +23,4 @@ ImageWithCanvas and ImageWithoutCanvas
 
 
 
-and you can change size of image by changing width and height
+you can change size of image by changing width and height
