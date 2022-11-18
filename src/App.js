@@ -11,10 +11,16 @@ function App() {
   return (
     <Container>
       <Container direction="row">
-        {/* 용량이 줄어든다. */}
-        <ImageWithCanvas width={width} height={height} imageURL={imageURL} />
-        {/* 용량이 줄지 않는다. */}
-        <ImageWithoutCanvas width={width} height={height} imageURL={imageURL} />
+        <Container margin="10px">
+          {/* image size has reduced */}
+          <h1>ImageWithCanvas</h1>
+          <ImageWithCanvas width={width} height={height} imageURL={imageURL} />
+        </Container>
+        <Container margin="10px">
+          <h1>ImageWithoutCanvas</h1>
+          {/* image size is same as original */}
+          <ImageWithoutCanvas width={width} height={height} imageURL={imageURL} />
+        </Container>
       </Container>
       <Input marginLeft="10px" type="file" onChange={onChange}></Input>
     </Container>

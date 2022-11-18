@@ -20,7 +20,7 @@ function CustomImage(props) {
   }, [imageURL, width, height]);
 
   return (
-    <Container width={width + "px"} height={height + "px"} margin="10px" border="2px solid silver">
+    <Container width={width + "px"} height={height + "px"} border="2px solid silver">
       <canvas ref={ref} />
     </Container>
   );

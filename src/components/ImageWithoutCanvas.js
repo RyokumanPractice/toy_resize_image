@@ -6,7 +6,7 @@ function ImageWithoutCanvas(props) {
   const height = props.height;
 
   return (
-    <Container width={width + "px"} height={height + "px"} margin="10px" border="2px solid silver">
+    <Container width={width + "px"} height={height + "px"} border="2px solid silver">
       <img width={width + "px"} heigth={height + "px"} src={imageURL} alt="" />
     </Container>
   );
