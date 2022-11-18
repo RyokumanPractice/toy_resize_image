@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { Input, Container, ImageWithCanvas, ImageWithoutCanvas } from "./components";
+import { resize } from "./utils/fileReader";
 
 function App() {
+  const [imageURL, setImageURL] = useState();
+  const onChange = (e) => resize(e.target.files[0], setImageURL);
+  const width = 600;
+  const height = 400;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Container direction="row">
+        {/* 용량이 줄어든다. */}
+        <ImageWithCanvas width={width} height={height} imageURL={imageURL} />
+        {/* 용량이 줄지 않는다. */}
+        <ImageWithoutCanvas width={width} height={height} imageURL={imageURL} />
+      </Container>
+      <Input marginLeft="10px" type="file" onChange={onChange}></Input>
+    </Container>
   );
 }
 
